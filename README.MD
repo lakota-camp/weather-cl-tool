@@ -16,8 +16,8 @@ This project fetches and displays the current weather forecast for a specified l
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/weather-forecast-app.git
-    cd weather-forecast-app
+    git clone https://github.com/lakotcamp/weather-cl-tool.git
+    cd weather-cl-tool
     ```
 
 2. Create a virtual environment and activate it:

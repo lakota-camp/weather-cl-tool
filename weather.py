@@ -90,17 +90,27 @@ def display_data(weather_data, city, state_code):
 
     
 def main():
-    
-    city = input('Enter a city (e.g. San Diego): ')
-    state_code = input('Enter a state (e.g. CA): ')
-    country_code = input('Enter a country (e.g. US): ')
-    print()
-    lat, lon = get_geo_location(city, state_code, country_code, api_key)
-    if (lat is not None) and (lon is not None):
-        weather_data = get_weather(lat, lon, api_key)
-        display_data(weather_data, city, state_code)
-    else:
-        print(f'Failed to fetch geolcation data.')
+    while True:
+        city = input('Enter a city (e.g. San Diego): ')
+        state_code = input('Enter a state (e.g. CA): ')
+        country_code = input('Enter a country (e.g. US): ')
+        print()
+        lat, lon = get_geo_location(city, state_code, country_code, api_key)
+        if (lat is not None) and (lon is not None):
+            weather_data = get_weather(lat, lon, api_key)
+            display_data(weather_data, city, state_code)
+        else:
+            print(f'Failed to fetch geolcation data.')
+        
+        print()
+        check = input('Would you like to check the weather for another location? \n(Enter Y to continue)\n(Enter any key other to exit): ')
+        if check.lower() != 'y':
+            print()
+            print('-' * 25)
+            print('Weather check complete!')
+            print('-' * 25)
+            print()
+            break
 
 
 if __name__ == '__main__':

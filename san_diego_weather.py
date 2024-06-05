@@ -73,15 +73,17 @@ def display_data(weather_data, city, state_code):
         sunset_local_time = conversions.timestamp_convert(sunset_time_timestamp, 'America/Los_Angeles')
                 
         # Display data
-        print(f'Current weather forecast for {city}, {state_code}')   
-        print(f'Conditions: {weather_desc}')
-        print(f'Temperature: {round(temp)}')
-        print(f'Feels like: {round(temp_feels_like)}')
-        print(f'Min: {round(temp_min)}')
-        print(f'Max: {round(temp_max)}')
-                
-        print(f'Sunrise time: {sunrise_local_time}')
-        print(f'Sunrise time: {sunset_local_time}')
+        print(f'Current Weather Forecast for {city}, {state_code}')
+        print('-' * 40)
+        print(f'{"Conditions:":<20} {weather_desc}')
+        print(f'{"Temperature:":<20} {temp:.2f} °F')
+        print(f'{"Feels Like:":<20} {temp_feels_like:.2f} °F')
+        print(f'{"Min Temperature:":<20} {temp_min:.2f} °F')
+        print(f'{"Max Temperature:":<20} {temp_max:.2f} °F')
+        print(f'{"Wind Speed:":<20} {wind_speed:.2f} m/s')
+        print(f'{"Sunrise:":<20} {sunrise_local_time}')
+        print(f'{"Sunset:":<20} {sunset_local_time}')
+        print('-' * 40)
     else:
         print('No weather data available.')
 

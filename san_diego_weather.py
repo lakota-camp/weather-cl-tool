@@ -2,7 +2,6 @@ import requests
 import os
 from dotenv import load_dotenv
 from utils import conversions
-import pytz
 
 load_dotenv()
 
@@ -39,7 +38,7 @@ def get_geo_location(city, state_code, country_code, api_key):
 
     return None, None
 def get_weather(lat, lon, api_key):
-        weather_url = f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}'
+        weather_url = f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={api_key}&units=imperial'
         data = requests.get(weather_url)
         
         if data.status_code == 200:
@@ -56,10 +55,10 @@ def display_data(weather_data, city, state_code):
     if weather_data:      
         weather_desc = weather_data['weather'][0]['description']      
         # Temp
-        temp = conversions.k_to_f((weather_data['main']['temp']))
-        temp_min = conversions.k_to_f(weather_data['main']['temp_min'])
-        temp_max = conversions.k_to_f(weather_data['main']['temp_max'])
-        temp_feels_like = conversions.k_to_f(weather_data['main']['feels_like'])
+        temp = (weather_data['main']['temp'])
+        temp_min = weather_data['main']['temp_min']
+        temp_max = weather_data['main']['temp_max']
+        temp_feels_like = weather_data['main']['feels_like']
                 
         # Wind
         wind_speed = weather_data['wind']['speed']
@@ -74,16 +73,16 @@ def display_data(weather_data, city, state_code):
                 
         # Display data
         print(f'Current Weather Forecast for {city}, {state_code}')
-        print('-' * 40)
+        print('-' * 45)
         print(f'{"Conditions:":<20} {weather_desc}')
         print(f'{"Temperature:":<20} {temp:.2f} °F')
         print(f'{"Feels Like:":<20} {temp_feels_like:.2f} °F')
         print(f'{"Min Temperature:":<20} {temp_min:.2f} °F')
         print(f'{"Max Temperature:":<20} {temp_max:.2f} °F')
-        print(f'{"Wind Speed:":<20} {wind_speed:.2f} m/s')
+        print(f'{"Wind Speed:":<20} {wind_speed:.2f} mph')
         print(f'{"Sunrise:":<20} {sunrise_local_time}')
         print(f'{"Sunset:":<20} {sunset_local_time}')
-        print('-' * 40)
+        print('-' * 45)
     else:
         print('No weather data available.')
 

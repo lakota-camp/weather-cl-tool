@@ -23,7 +23,7 @@ This command-line application fetches and displays the current weather forecast 
 2. **Set up a virtual environment and activate it:**
 
     ```bash
-    python -m venv .venv
+    python3 -m venv .venv
     source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
     ```
 
@@ -44,7 +44,7 @@ This command-line application fetches and displays the current weather forecast 
 5. **Run the application:**
 
     ```bash
-    python san_diego_weather.py  # or python weather.py for the general script
+    python3 weather.py  # or python3 san_diego_weather.py for San Diego weather (Incase the weather sucks where you live)
     ```
 
 ## 🛠️ CLI Command Alias Setup

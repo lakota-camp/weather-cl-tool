@@ -16,7 +16,7 @@ This command-line application fetches and displays the current weather forecast 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/lakotcamp/weather-cl-tool.git
+    git clone https://github.com/lakota-camp/weather-cl-tool.git
     cd weather-cl-tool
     ```
 

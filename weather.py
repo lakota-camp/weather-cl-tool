@@ -103,7 +103,6 @@ def display_data(weather_data, city, state_code):
         
         # Convert to appropriate timezone
         timezone_offset = timedelta(seconds=weather_data['timezone'])
-        print(timezone_offset)
                     
         # Convert UTC time to local time
         sunrise_local_time = (datetime.fromtimestamp(sunsrise_time_timestamp, timezone.utc) + timezone_offset).time()

@@ -71,7 +71,7 @@ def get_weather(lat, lon, api_key):
         
     return make_api_request(weather_url)
 
-# Function to elegantly dipslay the data in the terminal
+# Function to elegantly display the data in the terminal
 def display_data(weather_data, city, state_code):
     """Displays the weather data for given location
 
@@ -156,3 +156,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
+    

@@ -64,11 +64,11 @@ def display_data(weather_data, city, state_code):
         wind_speed = weather_data['wind']['speed']
                 
         # Sunrise and sunset
-        sunsrise_time_timestamp = weather_data['sys']['sunrise']
+        sunrise_time_timestamp = weather_data['sys']['sunrise']
         sunset_time_timestamp = weather_data['sys']['sunset']
                 
         # Convert UTC time to local time
-        sunrise_local_time = conversions.timestamp_convert(sunsrise_time_timestamp, 'America/Los_Angeles')
+        sunrise_local_time = conversions.timestamp_convert(sunrise_time_timestamp, 'America/Los_Angeles')
         sunset_local_time = conversions.timestamp_convert(sunset_time_timestamp, 'America/Los_Angeles')
                 
         # Display data
@@ -98,7 +98,7 @@ def main():
         weather_data = get_weather(lat, lon, api_key)
         display_data(weather_data, city, state_code)
     else:
-        print(f'Failed to fetch geolcation data.')
+        print(f'Failed to fetch geolocation data.')
 
 
 if __name__ == '__main__':
